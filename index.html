@@ -1,0 +1,113 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="description" content="PsychPrep India — free psychology MCQs, notes and exam practice.">
+<title>PsychPrep India | Psychology MCQs & Exam Prep</title>
+<style>
+:root{--bg:#f6f7fb;--card:#fff;--text:#172033;--muted:#667085;--primary:#5b4bdb;--primary2:#7c6cf0;--line:#e7e9f0;--good:#16834b}
+*{box-sizing:border-box}body{margin:0;font-family:system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;background:var(--bg);color:var(--text);line-height:1.55}
+header{background:linear-gradient(135deg,var(--primary),var(--primary2));color:#fff;padding:34px 18px 54px}
+.wrap{max-width:980px;margin:auto;padding:0 16px}.brand{font-weight:800;font-size:24px}.tag{opacity:.9;margin:8px 0 0}
+nav{display:flex;gap:8px;flex-wrap:wrap;margin-top:22px}nav button,.btn{border:0;border-radius:12px;padding:11px 15px;font-weight:700;cursor:pointer}
+nav button{background:#ffffff22;color:#fff}.btn{background:var(--primary);color:#fff}.btn.alt{background:#eef0ff;color:var(--primary)}
+main{margin-top:-30px}.hero,.card{background:var(--card);border:1px solid var(--line);border-radius:18px;box-shadow:0 8px 30px #1720330b}
+.hero{padding:24px}.hero h1{margin:0 0 8px;font-size:30px}.hero p{color:var(--muted)}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:14px;margin:18px 0}
+.card{padding:18px}.card h3{margin-top:0}.pill{display:inline-block;background:#eef0ff;color:var(--primary);padding:4px 9px;border-radius:999px;font-size:12px;font-weight:800}
+section{margin:26px 0}.section-title{font-size:22px;margin-bottom:12px}
+input{width:100%;padding:13px;border:1px solid var(--line);border-radius:12px;font-size:16px;margin-bottom:12px}
+.option{display:block;width:100%;text-align:left;background:#fff;border:1px solid var(--line);padding:13px;border-radius:12px;margin:8px 0;cursor:pointer}
+.option:hover{border-color:var(--primary)}.correct{border-color:var(--good);background:#eefbf4}.wrong{border-color:#c0392b;background:#fff2f0}
+.feedback{font-weight:700;margin-top:10px}.hidden{display:none}.small{font-size:13px;color:var(--muted)}
+footer{padding:30px 16px;color:var(--muted);text-align:center}
+.stat{font-size:28px;font-weight:800}.money{border:2px dashed #b9b2ff;background:#faf9ff}
+@media(max-width:600px){.hero h1{font-size:25px}}
+</style>
+</head>
+<body>
+<header>
+<div class="wrap">
+<div class="brand">🧠 PsychPrep India</div>
+<div class="tag">Free psychology MCQs • notes • exam practice</div>
+<nav>
+<button onclick="go('home')">Home</button><button onclick="go('quiz')">MCQ Test</button><button onclick="go('notes')">Notes</button><button onclick="go('about')">About</button>
+</nav>
+</div>
+</header>
+
+<main class="wrap">
+<section id="home">
+<div class="hero">
+<span class="pill">START FREE</span>
+<h1>Prepare smarter for psychology exams.</h1>
+<p>Practice psychology concepts with short explanations. New question sets can be added regularly as the site grows.</p>
+<div class="grid">
+<div class="card"><div class="stat" id="scoreStat">0</div><div class="small">Correct answers</div></div>
+<div class="card"><div class="stat">10</div><div class="small">Starter MCQs</div></div>
+<div class="card"><div class="stat">₹0</div><div class="small">To start</div></div>
+</div>
+<button class="btn" onclick="go('quiz')">Start today's test →</button>
+</div>
+</section>
+
+<section id="quiz" class="hidden">
+<div class="section-title">🎯 Psychology MCQ Test</div>
+<input id="search" placeholder="Search a topic, e.g. memory, conditioning..." oninput="renderQuiz()">
+<div id="quizBox"></div>
+</section>
+
+<section id="notes" class="hidden">
+<div class="section-title">📚 Free Notes</div>
+<div class="grid">
+<div class="card"><span class="pill">FOUNDATION</span><h3>Schools of Psychology</h3><p>Structuralism, functionalism, Gestalt, behaviorism, psychoanalysis and humanistic psychology.</p></div>
+<div class="card"><span class="pill">METHODS</span><h3>Research & Statistics</h3><p>Variables, reliability, validity, sampling, correlation, experiments and basic statistics.</p></div>
+<div class="card"><span class="pill">BIO</span><h3>Biological Psychology</h3><p>Neurons, neurotransmitters, brain regions, endocrine system and basic psychophysiology.</p></div>
+<div class="card money"><span class="pill">FUTURE PRODUCT</span><h3>Premium Question Bank</h3><p>A larger downloadable exam-preparation pack can be added here later. Keep the first version useful and free.</p></div>
+</div>
+</section>
+
+<section id="about" class="hidden">
+<div class="section-title">ℹ️ About PsychPrep India</div>
+<div class="card">
+<p>PsychPrep India is an independent educational project for psychology learners. It is designed to make revision simple, mobile-friendly and practice-focused.</p>
+<p class="small">Educational content only. It is not an RCI licensing authority, university, or official examination website.</p>
+</div>
+</section>
+</main>
+
+<footer>© 2026 PsychPrep India • Built as a zero-cost starter project</footer>
+
+<script>
+const questions=[
+{t:"History",q:"Which year is traditionally associated with Wilhelm Wundt establishing the first experimental psychology laboratory?",o:["1879","1890","1905","1913"],a:0,e:"1879 is traditionally associated with Wundt's laboratory in Leipzig."},
+{t:"Learning",q:"In classical conditioning, the stimulus that naturally produces a response is called the:",o:["Conditioned stimulus","Unconditioned stimulus","Conditioned response","Neutral stimulus"],a:1,e:"An unconditioned stimulus naturally elicits a response without prior learning."},
+{t:"Research",q:"The variable deliberately manipulated by a researcher is the:",o:["Dependent variable","Control variable","Independent variable","Confounding variable"],a:2,e:"The independent variable is manipulated to examine its effect on the dependent variable."},
+{t:"Memory",q:"Which memory system briefly holds and manipulates information needed for ongoing tasks?",o:["Procedural memory","Working memory","Semantic memory","Episodic memory"],a:1,e:"Working memory temporarily holds and actively manipulates information."},
+{t:"Biological",q:"The resting membrane potential of a typical neuron is approximately:",o:["+70 mV","0 mV","−70 mV","−10 mV"],a:2,e:"A typical resting potential is around −70 mV."},
+{t:"Statistics",q:"Pearson's r is primarily used to describe:",o:["Correlation between two variables","Difference between three means","Categorical frequency only","A clinical diagnosis"],a:0,e:"Pearson's correlation coefficient describes the linear association between two quantitative variables."},
+{t:"Personality",q:"The 'Big Five' model includes which trait?",o:["Id","Conscientiousness","Collective unconscious","Archetype"],a:1,e:"Conscientiousness is one of the Big Five personality dimensions."},
+{t:"Therapy",q:"Client-centered therapy is most closely associated with:",o:["Carl Rogers","B. F. Skinner","Sigmund Freud","Aaron Beck"],a:0,e:"Carl Rogers developed the person-centered/client-centered approach."},
+{t:"Emotion",q:"According to the James-Lange theory, emotional experience follows:",o:["Cognitive appraisal only","Physiological arousal","A dream state","Social comparison"],a:1,e:"James-Lange theory proposes that perception of bodily changes contributes to emotional experience."},
+{t:"Development",q:"In Piaget's theory, object permanence develops during the:",o:["Sensorimotor stage","Preoperational stage","Concrete operational stage","Formal operational stage"],a:0,e:"Object permanence emerges during the sensorimotor period."}
+];
+let answered=JSON.parse(localStorage.getItem("pp_answered")||"{}");
+function go(id){document.querySelectorAll("main section").forEach(x=>x.classList.add("hidden"));document.getElementById(id).classList.remove("hidden");if(id==="quiz")renderQuiz();scrollTo({top:0,behavior:"smooth"})}
+function renderQuiz(){
+ const term=(document.getElementById("search")?.value||"").toLowerCase();
+ const box=document.getElementById("quizBox");box.innerHTML="";
+ questions.filter(x=>(x.t+" "+x.q+" "+x.o.join(" ")).toLowerCase().includes(term)).forEach((x,i)=>{
+  const real=questions.indexOf(x), chosen=answered[real];
+  const d=document.createElement("div");d.className="card";d.innerHTML=`<span class="pill">${x.t}</span><h3>${real+1}. ${x.q}</h3>`;
+  x.o.forEach((op,j)=>{const b=document.createElement("button");b.className="option";b.textContent=op;if(chosen!==undefined){if(j===x.a)b.classList.add("correct");if(j===chosen&&j!==x.a)b.classList.add("wrong");b.disabled=true}b.onclick=()=>answer(real,j,d);d.appendChild(b)});
+  const f=document.createElement("div");f.className="feedback";if(chosen!==undefined)f.textContent=chosen===x.a?"✅ Correct! "+x.e:"❌ Not quite. "+x.e;d.appendChild(f);box.appendChild(d);
+ });
+ updateStats();
+}
+function answer(i,j,d){answered[i]=j;localStorage.setItem("pp_answered",JSON.stringify(answered));renderQuiz()}
+function updateStats(){document.getElementById("scoreStat").textContent=questions.filter((x,i)=>answered[i]===x.a).length}
+go("home");
+</script>
+</body>
+</html>
